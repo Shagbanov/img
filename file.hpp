@@ -727,9 +727,9 @@ public:
                 }
             }
         }
-        for (auto it = pixels.begin(); it != pixels.end(); ) {
+        for (auto it = pixelsNew.begin(); it != pixelsNew.end(); ) {
             if (*it == "-1") {
-                it = pixels.erase(it);
+                it = pixelsNew.erase(it);
             } else {
                 ++it;
             }

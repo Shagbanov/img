@@ -44,9 +44,9 @@ int main() {
         } else if (c == 3) {
             std::cout << "Введите с какой стороны приклеить: ";
             std::cin >> side;
-            std::cout << std::endl << "Введите в какую сторону сдвигать изображение";
+            std::cout << std::endl << "Введите в какую сторону сдвигать изображение: ";
             std::cin >> dop;
-            std::cout << std::endl << "Введите название файла";
+            std::cout << std::endl << "Введите название файла: ";
             std::cin >> name;
             CustomFileStream dopFile("../" + name,
                                      std::ios::in | std::ios::out | std::ios::binary);
@@ -54,13 +54,12 @@ int main() {
         } else if (c == 4) {
             file.negative();
         } else if (c == 5 or c == 6) {
-            std::cout << "Введите x1,y1 через пробел:  ";
+            std::cout << "Введите x1,y1 через пробел: ";
             std::cin >> x1 >> y1;
-            std::cout << std::endl << "Введите название файла";
+            std::cout << std::endl << "Введите название файла: ";
             std::cin >> name;
             CustomFileStream dopFile("../" + name,
                                      std::ios::in | std::ios::out | std::ios::binary);
-            file.join(side, dop, &dopFile);
             if (c == 5) {
                 file.overlay_d(x1, y1, &dopFile);
             } else if (c == 6) {
@@ -68,6 +67,8 @@ int main() {
             }
         } else if (c == 7){
             init();
+        } else if (c == 0){
+            break;
         } else {
             std::cout << "Введите верное значение" << std::endl;
             while (true){
